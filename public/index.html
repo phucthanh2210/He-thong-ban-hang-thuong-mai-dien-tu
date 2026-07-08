@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TechShop - Hệ thống bán hàng điện tử trực tuyến. Điện thoại, Laptop, Tablet, Tai nghe, Đồng hồ thông minh và Phụ kiện chính hãng.">
+  <title>TechShop — Mua sắm công nghệ</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-brand" onclick="router.navigate('/')">
+        <span class="brand-icon">🛒</span>
+        <span>TechShop</span>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#/" data-nav="home">🏠 Trang chủ</a></li>
+        <li><a href="#/shop" data-nav="shop">🛍️ Cửa hàng</a></li>
+        <li><a href="#/cart" data-nav="cart">🛒 Giỏ hàng <span class="nav-cart-badge" id="cartBadge" style="display:none">0</span></a></li>
+
+        <!-- Logged in links -->
+        <li class="auth-only" style="display:none"><a href="#/orders" data-nav="orders">📦 Đơn hàng</a></li>
+        <li class="admin-only" style="display:none"><a href="#/admin" data-nav="admin">⚙️ Quản trị</a></li>
+
+        <!-- Auth links -->
+        <li class="guest-only"><a href="#/login" data-nav="login">🔑 Đăng nhập</a></li>
+        <li class="auth-only" style="display:none"><a href="#/profile" data-nav="profile">👤 <span id="navUserName">Tài khoản</span></a></li>
+        <li class="auth-only" style="display:none"><a href="#" id="logoutBtn" onclick="auth.logout(); return false;">🚪 Đăng xuất</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Main Content -->
+  <main class="main-content" id="app">
+    <div class="loading">
+      <div class="spinner"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">🛒 TechShop</div>
+        <div class="footer-text">© 2026 TechShop — Mini E-Commerce System. PTTKHT Project.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/pages.js"></script>
+</body>
+</html>
